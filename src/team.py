@@ -24,7 +24,7 @@ def get_cumsum_pts_dict(teams):
         new_df['pts']=pts
         points[t] = new_df['pts']
         cumsums[t] = new_df['pts'].cumsum()
-        return points, cumsums
+    return points, cumsums
 
 def get_gs_dict(teams):
     stats = {}
@@ -90,6 +90,8 @@ def make_table(cumsum_dict):
 def make_pre_post_tables(points_dict):
     pre = {t:points[t].values[0:29].mean() for t in points.keys()}
     post = {t:points[t].values[29:].mean() for t in points.keys()}
+    sorted_pre = {k:pre[k] for k,v in table.items()}
+    sorted_post = {k:post[k] for k,v in table.items()}
     return pre, post
 
 if __name__ == '__main__':

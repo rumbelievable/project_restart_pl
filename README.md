@@ -3,7 +3,8 @@
 ## Table of Contents
 * [Data](#data)
 * [Teams](#teams)
-* [Pre/Post-Restart Analysis](###Pre/Post-Restart-Analysis)
+* [Pre/Post-Restart Analysis](#Pre/Post-Restart-Analysis)
+* [Future Work](#future-work)
 
 # Motivation
 
@@ -37,5 +38,8 @@ I wanted to have a look at how teams were faring both before and after the resta
 
 ![](images/avgppg_before_after.png)
 
+## Future Work
+
+I plan to do some statistical tests to see if these perceived improvements/declines are statistically significant and perhaps the shutdown was either beneficial or not. I also want to take a look at individual players and their performances and see if there was any significant change there.
 
 
