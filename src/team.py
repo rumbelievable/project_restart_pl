@@ -90,6 +90,20 @@ def make_pre_post_tables(points_dict):
     sorted_post = {k:post[k] for k,v in table.items()}
     return sorted_pre, sorted_post
 
+def ttest_ppg(points_dict):
+    '''
+    Perform a two-sample t-test on the average points per game before and after the restart for all teams.
+    
+    Input: teams (list): List of teams
+           points_dict (dict): Dictionary of teams and points per gameweek
+    Output: p_values (dict): Dictionary of teams and their resultant p-values from the t-test
+    '''
+    p_values = {}
+    for team in points_dict.keys():
+        t, p = ttest_ind(points_dict[team][0:29], points_dict[team][30:], equal_var=True)
+        p_values[team]= p
+    return p_values
+
 if __name__ == '__main__':
     df = pd.read_csv('data/E0.csv')
 
@@ -103,3 +117,7 @@ if __name__ == '__main__':
     table = make_table(cumsums)
     pre_covid_ppg, post_covid_ppg = make_pre_post_tables(points)
 
+    p_vals = ttest_ppg(teams)
+    for t, p in p_vals.items():
+    if p < .05:
+        print(f"{t}'s points per game average change was statistically significant.")
