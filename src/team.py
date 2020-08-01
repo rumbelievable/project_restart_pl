@@ -41,20 +41,16 @@ def get_gs_dict(teams):
         stats[t] = s
     return stats
 
-def plot_cumsums(cumsums, annotated=False):
+def plot_cumsums(cumsums):
     fig, ax = plt.subplots(1,1,figsize=(15,7))
     for i, t in enumerate(teams):
         ax.plot(range(1,39), cumsums[t], label=t, color=colors[i])
-        if annotated:
-            ax.annotate(t, xy=(38, cumsums[t].values[-1]))
+        ax.annotate(cumsums[t].values[-1], xy=(38, cumsums[t].values[-1]), fontsize=12)
     ax.set_title('Points by Team', fontsize=22)
     ax.set_xlabel('Gameweek', fontsize=19)
     ax.set_ylabel('Number of Points', fontsize=19)
     ax.set_xticks(range(1,39))
     plt.tick_params(labelsize=14)
-    if annotated:
-        plt.tight_layout(pad=1)
-        plt.savefig('annotated_point_totals.png', dpi=100)
     ax.legend()
     handles, labels = ax.get_legend_handles_labels()
     labels, handles = zip(*sorted(zip(labels, handles), key=lambda t: t[0]))
@@ -65,7 +61,7 @@ def plot_gs(dictionary_of_stats, teams_to_plot, save=False):
     fig, ax = plt.subplots(1,1,figsize=(15,7))
     for t in teams:
     #     ax.plot(range(1,39), gs[t], label=t, color=color_dict[t], marker='o')
-        c = np.array(gs[t])
+        c = np.array(dictionary_of_stats[t])
         ax.plot(range(1,39), np.cumsum(c), ls='--', color=color_dict[t], alpha=.8)
         ax.annotate(f'{t}: {np.cumsum(c)[-1]}', xy=(38, np.cumsum(c)[-1]), fontsize=12)
     # ax.legend()
@@ -92,7 +88,7 @@ def make_pre_post_tables(points_dict):
     post = {t:points[t].values[29:].mean() for t in points.keys()}
     sorted_pre = {k:pre[k] for k,v in table.items()}
     sorted_post = {k:post[k] for k,v in table.items()}
-    return pre, post
+    return sorted_pre, sorted_post
 
 if __name__ == '__main__':
     df = pd.read_csv('data/E0.csv')
