@@ -120,8 +120,6 @@ if __name__ == '__main__':
     p_vals = ttest_ppg(teams)
     for t, p in p_vals.items():
         if p <= .05:
-            print(f"For a significance level of .05, {t}'s points per game average change was statistically significant with a p-value of: 
-                {round(p, 3)}.\nTheir points per game average went from {round(points[t][0:29].mean(), 3)} ppg to {round(points[t][30:].mean(), 3)} ppg.")
+            print(f"For a significance level of .05, {t}'s points per game average change was statistically significant with a p-value of: {round(p, 3)}.\nTheir points per game average went from {round(points[t][0:29].mean(), 3)} ppg to {round(points[t][30:].mean(), 3)} ppg.")
         if .05 <= p <= .1:
-            print(f"For significance level of .1, {t}'s points per game average change was statistically significant with a p-value of: 
-                {round(p, 3)}.\nTheir points per game average went from {round(points[t][0:29].mean(), 3)} ppg to {round(points[t][30:].mean(), 3)} ppg.")
+            print(f"For significance level of .1, {t}'s points per game average change was statistically significant with a p-value of: {round(p, 3)}.\nTheir points per game average went from {round(points[t][0:29].mean(), 3)} ppg to {round(points[t][30:].mean(), 3)} ppg.")
