@@ -109,8 +109,8 @@ if __name__ == '__main__':
 
     teams = df['HomeTeam'].unique()
     colors = ['red', 'deepskyblue', 'maroon', 'cornflowerblue', 'orangered','yellow', 'cadetblue', 'blue', 
-                'mediumblue', 'firebrick', 'salmon', 'gold', 'steelblue', 'navy', 'brown', 'royalblue', 
-                'darkgrey', 'darkgoldenrod', 'dodgerblue', 'crimson']
+            'mediumblue', 'firebrick', 'salmon', 'gold', 'steelblue', 'navy', 'brown', 'royalblue', 
+            'darkgrey', 'darkgoldenrod', 'dodgerblue', 'crimson']
     color_dict = {x:y for x, y in zip(teams, colors)}
     sorted_color_dict = {k:color_dict[k] for k,v in table.items()}
     points, cumsums = get_cumsum_pts_dict(teams)
@@ -119,5 +119,9 @@ if __name__ == '__main__':
 
     p_vals = ttest_ppg(teams)
     for t, p in p_vals.items():
-    if p < .05:
-        print(f"{t}'s points per game average change was statistically significant.")
+        if p <= .05:
+            print(f"For a significance level of .05, {t}'s points per game average change was statistically significant with a p-value of: 
+                {round(p, 3)}.\nTheir points per game average went from {round(points[t][0:29].mean(), 3)} ppg to {round(points[t][30:].mean(), 3)} ppg.")
+        if .05 <= p <= .1:
+            print(f"For significance level of .1, {t}'s points per game average change was statistically significant with a p-value of: 
+                {round(p, 3)}.\nTheir points per game average went from {round(points[t][0:29].mean(), 3)} ppg to {round(points[t][30:].mean(), 3)} ppg.")

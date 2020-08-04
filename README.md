@@ -34,12 +34,14 @@ And a look at the cumulative goals scored for the top six teams as well as the t
 
 ## Pre/Post-Restart Analysis
 
-I wanted to have a look at how teams were faring both before and after the restart. The plot below shows this. As you can see, Liverpool, the eventual Champions, had a pretty dramatic dip in performance after the restart, but this didn't stop them as they clinched the title shortly after the restart. Leicester, Crystal Palace and Norwich also had extreme declines in performance, leading to Norwich's relegation. Some notable improvements can be seen with Manchester United, jumping from ~1.5 points per game, to just beneath 2.5 points per game. Southampton had an even larger performance gain, increasing their average by over .8 points per game.
+I wanted to have a look at how teams were faring both before and after the restart. The plot above shows this. As you can see, Liverpool, the eventual Champions, had a pretty dramatic dip in performance after the restart, but this didn't stop them as they clinched the title shortly after the restart. Leicester, Crystal Palace and Norwich also had extreme declines in performance, leading to Norwich's relegation. Some notable improvements can be seen with Manchester United, jumping from ~1.5 points per game, to just beneath 2.5 points per game. Southampton had an even larger performance gain, increasing their average by over .8 points per game. However, the only statistically significant changes were for Liverpool, surprisingly, and Crystal Palace with an alpha set to .05. With more lenience in the alpha value, other teams showed some significant performance changes which can be seen above.
 
 ![](images/avgppg_before_after.png)
 
+For a significance level of .05, both Liverpool and Crystal Palace's points per game average change was statistically significant with a p-value of: 0.022 and 0.013, respectively. And for a significance level of .1, Manchester United and Norwich's points per game average change was statistically significant with a p-value of: 0.062 and .082, respectively.
+
 ## Future Work
 
-I plan to do some statistical tests to see if these perceived improvements/declines are statistically significant and perhaps the shutdown was either beneficial or not. I also want to take a look at individual players and their performances and see if there was any significant change there.
+I plan to also perform similar tests to the amount of goals scored before and after the restart. Additionally, I want to take a look at individual players and their performances and see if there was any significant change there.
 
 
