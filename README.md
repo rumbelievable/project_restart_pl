@@ -58,7 +58,9 @@ For a significance level of .05, both **Liverpool** and **Crystal Palace's** poi
 
 ## Players
 
-After performing a similar t-test to the one above, no player in the top 12 goal scorers for the season had any significant dip or improvement after the restart.
+**Goals Scorers**: After performing a similar t-test to the one above, no player in the top 12 goal scorers for the season had any significant dip or improvement after the restart. However, after performing this t-test on the goal tallies of all players in the league, these ones did register significant changes. As you can see, most of these players were either registering any goals at all after the restart or didn't score a single one.
+
+![](images/significant_goal_changes.png)
 
 # Future Work
 
