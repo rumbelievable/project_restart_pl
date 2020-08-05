@@ -36,24 +36,32 @@ And a look at the cumulative goals scored for the top six teams as well as the t
 
 ### Top Scorers
 
-Goals scored is commonly the first statistic to look at in terms of performance, so I had a look at the top 12 goal scorers and their production throughout the season and how they fared pre and post-restart. Jamie Vardy won the Golden Boot for most goals scored with 23 goals.
+Goals scored is commonly the first statistic to look at in terms of performance, so I had a look at the top 12 goal scorers and their production throughout the season and how they fared pre and post-restart. **Jamie Vardy** won the Golden Boot for most goals scored with 23 goals.
 
 ![](images/goals_scored_top12.png)
 
 ### Top Assists
 
+According to my data [source](https://github.com/vaastav/Fantasy-Premier-League), Kevin De Bruyne ran away with the most assists with 23 total. Next up was Trent Alexander-Arnold, with 15, which broke his own record for a full-back in a single season.
+
 ![](images/assists_top13.png)
 
-## Pre/Post-Restart Analysis
+# Analysis
+
+## Teams
 
 I wanted to have a look at how teams were faring both before and after the restart. The plot above shows this. As you can see, Liverpool, the eventual Champions, had a pretty dramatic dip in performance after the restart, but this didn't stop them as they clinched the title shortly after the restart. Leicester, Crystal Palace and Norwich also had extreme declines in performance, leading to Norwich's relegation. Some notable improvements can be seen with Manchester United, jumping from ~1.5 points per game, to just beneath 2.5 points per game. Southampton had an even larger performance gain, increasing their average by over .8 points per game. However, the only statistically significant changes were for Liverpool, surprisingly, and Crystal Palace with an alpha set to .05. With more lenience in the alpha value, other teams showed some significant performance changes which can be seen above.
 
 ![](images/avgppg_before_after.png)
 
-For a significance level of .05, both Liverpool and Crystal Palace's points per game average change was statistically significant with a p-value of: 0.022 and 0.013, respectively. And for a significance level of .1, Manchester United and Norwich's points per game average change was statistically significant with a p-value of: 0.062 and .082, respectively.
+For a significance level of .05, both **Liverpool** and **Crystal Palace's** points per game average change was statistically significant with a p-value of: 0.022 and 0.013, respectively. And for a significance level of .1, **Manchester United** and **Norwich's** points per game average change was statistically significant with a p-value of: 0.062 and .082, respectively.
 
-## Future Work
+## Players
 
-I plan to also perform similar tests to the amount of goals scored before and after the restart. Additionally, I want to take a look at individual players and their performances and see if there was any significant change there.
+After performing a similar t-test to the one above, no player in the top 12 goal scorers for the season had any significant dip or improvement after the restart.
+
+# Future Work
+
+There is so much analysis that could be done for this tricky season, among both individual player performances as well as teams overall. I'm almost overwhelmed with the magnitude of possibility this strange year has provided for data science. But most importantly, we want things to return to a safe and relatively normally experience for all. 
 
 
